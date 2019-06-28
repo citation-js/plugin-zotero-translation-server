@@ -11,8 +11,8 @@ install:
   - git clone https://github.com/zotero/translation-server
   - cd translation-server
   - npm install
-  - node test/util/server.js start
   - cd ..
+  - node test/util/server.js start
 script:
   - npm run coverage
 after_success:
