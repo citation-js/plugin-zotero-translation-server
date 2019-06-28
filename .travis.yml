@@ -8,7 +8,7 @@ install:
   - npm install -g codecov
 
   # setup translation server
-  - git clone https://github.com/zotero/translation-server
+  - git clone --recursive https://github.com/zotero/translation-server
   - cd translation-server
   - npm install
   - node ../test/util/server.js start
