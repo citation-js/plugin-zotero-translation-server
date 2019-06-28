@@ -6,8 +6,13 @@ sudo: false
 install:
   - npm install
   - npm install -g codecov
+
+  # setup translation server
   - git clone https://github.com/zotero/translation-server
-  - cd translation-server && npm install && npm start & && cd ..
+  - cd translation-server
+  - npm install
+  - npm start &
+  - cd ..
 script:
   - npm run coverage
 after_success:
