@@ -167,7 +167,7 @@ function fixResults (results) {
 
 describe('zotero', function () {
   describe('web-scraping', function () {
-    for (let { name, input, output } of apiTests) {
+    for (const { name, input, output } of apiTests) {
       it(name, async function () {
         this.timeout(4000)
         const results = await plugins.input.chainAsync(input, { generateGraph: false })

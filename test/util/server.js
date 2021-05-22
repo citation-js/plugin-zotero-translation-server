@@ -1,7 +1,7 @@
 const spawn = require('child_process').spawn
 
 switch (process.argv[2]) {
-  case 'start':
+  case 'start': {
     const server = spawn('npm', ['start'], {
       detached: true,
       windowsHide: true
@@ -17,4 +17,5 @@ switch (process.argv[2]) {
     server.stderr.on('data', function (data) {
       console.error(data.toString('utf8'))
     })
+  }
 }
