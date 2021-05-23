@@ -138,28 +138,12 @@ const MAPPING = [
   {
     source: 'DOI',
     target: 'DOI',
-    when: {
-      source: { itemType: ['journalArticle', 'conferencePaper'] },
-      target: { type: ['article-journal', 'paper-conference'] }
-    }
+    when: { target: { type: ['article-journal', 'paper-conference'] } }
   },
   {
     source: 'ISBN',
     target: 'ISBN',
     when: {
-      source: {
-        itemType: [
-          'book',
-          'bookSection',
-          'map',
-          'audioRecording',
-          'videoRecording',
-          'computerProgram',
-          'conferencePaper',
-          'encyclopediaArticle',
-          'dictionaryEntry'
-        ]
-      },
       target: {
         type: [
           'book',
@@ -177,9 +161,6 @@ const MAPPING = [
     source: 'ISSN',
     target: 'ISSN',
     when: {
-      source: {
-        itemType: ['journalArticle', 'magazineArticle', 'newspaperArticle']
-      },
       target: {
         type: ['article-journal', 'article-magazine', 'article-newspaper']
       }
@@ -189,28 +170,6 @@ const MAPPING = [
     source: 'url',
     target: 'URL',
     when: {
-      source: {
-        itemType: [
-          'book', 'bookSection',
-          'journalArticle', 'magazineArticle',
-          'newspaperArticle', 'thesis',
-          'letter', 'manuscript',
-          'interview', 'film',
-          'artwork', 'webpage',
-          'attachment', 'report',
-          'bill', 'case',
-          'hearing', 'patent',
-          'statute', 'email',
-          'map', 'blogPost',
-          'instantMessage', 'forumPost',
-          'audioRecording', 'presentation',
-          'videoRecording', 'tvBroadcast',
-          'radioBroadcast', 'podcast',
-          'computerProgram', 'conferencePaper',
-          'document', 'encyclopediaArticle',
-          'dictionaryEntry'
-        ]
-      },
       target: {
         type: [
           'book',
@@ -246,27 +205,6 @@ const MAPPING = [
     source: 'abstractNote',
     target: 'abstract',
     when: {
-      source: {
-        itemType: [
-          'book', 'bookSection',
-          'journalArticle', 'magazineArticle',
-          'newspaperArticle', 'thesis',
-          'letter', 'manuscript',
-          'interview', 'film',
-          'artwork', 'webpage',
-          'report', 'bill',
-          'case', 'hearing',
-          'patent', 'statute',
-          'email', 'map',
-          'blogPost', 'instantMessage',
-          'forumPost', 'audioRecording',
-          'presentation', 'videoRecording',
-          'tvBroadcast', 'radioBroadcast',
-          'podcast', 'computerProgram',
-          'conferencePaper', 'document',
-          'encyclopediaArticle', 'dictionaryEntry'
-        ]
-      },
       target: {
         type: [
           'book',
@@ -302,28 +240,6 @@ const MAPPING = [
     source: 'accessDate',
     target: 'accessed',
     when: {
-      source: {
-        itemType: [
-          'book', 'bookSection',
-          'journalArticle', 'magazineArticle',
-          'newspaperArticle', 'thesis',
-          'letter', 'manuscript',
-          'interview', 'film',
-          'artwork', 'webpage',
-          'attachment', 'report',
-          'bill', 'case',
-          'hearing', 'patent',
-          'statute', 'email',
-          'map', 'blogPost',
-          'instantMessage', 'forumPost',
-          'audioRecording', 'presentation',
-          'videoRecording', 'tvBroadcast',
-          'radioBroadcast', 'podcast',
-          'computerProgram', 'conferencePaper',
-          'document', 'encyclopediaArticle',
-          'dictionaryEntry'
-        ]
-      },
       target: {
         type: [
           'book',
@@ -360,21 +276,6 @@ const MAPPING = [
     source: 'archive',
     target: 'archive',
     when: {
-      source: {
-        itemType: [
-          'book', 'bookSection',
-          'journalArticle', 'magazineArticle',
-          'newspaperArticle', 'thesis',
-          'letter', 'manuscript',
-          'interview', 'film',
-          'artwork', 'report',
-          'map', 'audioRecording',
-          'videoRecording', 'tvBroadcast',
-          'radioBroadcast', 'computerProgram',
-          'conferencePaper', 'document',
-          'encyclopediaArticle', 'dictionaryEntry'
-        ]
-      },
       target: {
         type: [
           'book',
@@ -402,21 +303,6 @@ const MAPPING = [
     source: 'archiveLocation',
     target: 'archive_location',
     when: {
-      source: {
-        itemType: [
-          'book', 'bookSection',
-          'journalArticle', 'magazineArticle',
-          'newspaperArticle', 'thesis',
-          'letter', 'manuscript',
-          'interview', 'film',
-          'artwork', 'report',
-          'map', 'audioRecording',
-          'videoRecording', 'tvBroadcast',
-          'radioBroadcast', 'computerProgram',
-          'conferencePaper', 'document',
-          'encyclopediaArticle', 'dictionaryEntry'
-        ]
-      },
       target: {
         type: [
           'book',
@@ -550,7 +436,10 @@ const MAPPING = [
   {
     source: 'interviewee',
     target: 'author',
-    when: { source: { itemType: 'interview' }, target: { type: 'interview' } },
+    when: {
+      source: { itemType: 'interview' },
+      target: { type: 'interview' }
+    },
     convert: CONVERTERS.CREATORS
   },
   {
@@ -583,13 +472,19 @@ const MAPPING = [
   {
     source: 'performer',
     target: 'author',
-    when: { source: { itemType: 'audioRecording' }, target: { type: 'song' } },
+    when: {
+      source: { itemType: 'audioRecording' },
+      target: { type: 'song' }
+    },
     convert: CONVERTERS.CREATORS
   },
   {
     source: 'presenter',
     target: 'author',
-    when: { source: { itemType: 'presentation' }, target: { type: 'speech' } },
+    when: {
+      source: { itemType: 'presentation' },
+      target: { type: 'speech' }
+    },
     convert: CONVERTERS.CREATORS
   },
   {
@@ -675,10 +570,7 @@ const MAPPING = [
   {
     source: 'session',
     target: 'chapter-number',
-    when: {
-      source: { itemType: ['bill', 'hearing', 'statute'] },
-      target: { type: ['bill', 'legislation'] }
-    }
+    when: { target: { type: ['bill', 'legislation'] } }
   },
   {
     source: 'seriesEditor',
@@ -794,19 +686,22 @@ const MAPPING = [
   {
     source: 'composer',
     target: 'composer',
-    when: { source: { itemType: 'audioRecording' }, target: { type: 'song' } },
+    when: { target: { type: 'song' } },
     convert: CONVERTERS.CREATORS
   },
   {
     source: 'bookAuthor',
     target: 'container-author',
-    when: { source: { itemType: 'bookSection' }, target: { type: 'chapter' } },
+    when: { target: { type: 'chapter' } },
     convert: CONVERTERS.CREATORS
   },
   {
     source: 'bookTitle',
     target: 'container-title',
-    when: { source: { itemType: 'bookSection' }, target: { type: 'chapter' } }
+    when: {
+      source: { itemType: 'bookSection' },
+      target: { type: 'chapter' }
+    }
   },
   {
     source: 'publicationTitle',
@@ -841,7 +736,10 @@ const MAPPING = [
   {
     source: 'blogTitle',
     target: 'container-title',
-    when: { source: { itemType: 'blogPost' }, target: { type: 'post-weblog' } }
+    when: {
+      source: { itemType: 'blogPost' },
+      target: { type: 'post-weblog' }
+    }
   },
   {
     source: 'forumTitle',
@@ -908,12 +806,7 @@ const MAPPING = [
   {
     source: 'director',
     target: 'director',
-    when: {
-      source: {
-        itemType: ['film', 'videoRecording', 'tvBroadcast', 'radioBroadcast']
-      },
-      target: false
-    },
+    when: { target: false },
     convert: CONVERTERS.CREATORS
   },
   {
@@ -986,7 +879,10 @@ const MAPPING = [
   {
     source: 'meetingName',
     target: 'event',
-    when: { source: { itemType: 'presentation' }, target: { type: 'speech' } }
+    when: {
+      source: { itemType: 'presentation' },
+      target: { type: 'speech' }
+    }
   },
   {
     source: 'conferenceName',
@@ -1000,19 +896,6 @@ const MAPPING = [
     source: 'place',
     target: 'event-place',
     when: {
-      source: {
-        itemType: [
-          'book', 'bookSection',
-          'newspaperArticle', 'thesis',
-          'manuscript', 'report',
-          'hearing', 'patent',
-          'map', 'audioRecording',
-          'presentation', 'videoRecording',
-          'tvBroadcast', 'radioBroadcast',
-          'computerProgram', 'conferencePaper',
-          'encyclopediaArticle', 'dictionaryEntry'
-        ]
-      },
       target: {
         type: [
           'book',
@@ -1048,7 +931,10 @@ const MAPPING = [
   {
     source: 'manuscriptType',
     target: 'genre',
-    when: { source: { itemType: 'manuscript' }, target: { type: 'manuscript' } }
+    when: {
+      source: { itemType: 'manuscript' },
+      target: { type: 'manuscript' }
+    }
   },
   {
     source: 'genre',
@@ -1081,7 +967,10 @@ const MAPPING = [
   {
     source: 'presentationType',
     target: 'genre',
-    when: { source: { itemType: 'presentation' }, target: { type: 'speech' } }
+    when: {
+      source: { itemType: 'presentation' },
+      target: { type: 'speech' }
+    }
   },
   {
     source: 'programmingLanguage',
@@ -1094,7 +983,7 @@ const MAPPING = [
   {
     source: 'interviewer',
     target: 'interviewer',
-    when: { source: { itemType: 'interview' }, target: { type: 'interview' } },
+    when: { target: { type: 'interview' } },
     convert: CONVERTERS.CREATORS
   },
   {
@@ -1177,16 +1066,16 @@ const MAPPING = [
   {
     source: 'dateEnacted',
     target: 'issued',
-    when: { source: { itemType: 'statute' }, target: { type: 'legislation' } },
+    when: {
+      source: { itemType: 'statute' },
+      target: { type: 'legislation' }
+    },
     convert: CONVERTERS.DATE
   },
   {
     source: 'journalAbbreviation',
     target: 'journalAbbreviation',
-    when: {
-      source: { itemType: 'journalArticle' },
-      target: { type: 'article-journal' }
-    }
+    when: { target: { type: 'article-journal' } }
   },
   {
     source: 'language',
@@ -1253,7 +1142,10 @@ const MAPPING = [
   {
     source: 'interviewMedium',
     target: 'medium',
-    when: { source: { itemType: 'interview' }, target: { type: 'interview' } }
+    when: {
+      source: { itemType: 'interview' },
+      target: { type: 'interview' }
+    }
   },
   {
     source: 'videoRecordingFormat',
@@ -1296,27 +1188,6 @@ const MAPPING = [
     source: 'extra',
     target: 'note',
     when: {
-      source: {
-        itemType: [
-          'book', 'bookSection',
-          'journalArticle', 'magazineArticle',
-          'newspaperArticle', 'thesis',
-          'letter', 'manuscript',
-          'interview', 'film',
-          'artwork', 'webpage',
-          'report', 'bill',
-          'case', 'hearing',
-          'patent', 'statute',
-          'email', 'map',
-          'blogPost', 'instantMessage',
-          'forumPost', 'audioRecording',
-          'presentation', 'videoRecording',
-          'tvBroadcast', 'radioBroadcast',
-          'podcast', 'computerProgram',
-          'conferencePaper', 'document',
-          'encyclopediaArticle', 'dictionaryEntry'
-        ]
-      },
       target: {
         type: [
           'book',
@@ -1376,7 +1247,10 @@ const MAPPING = [
   {
     source: 'publicLawNumber',
     target: 'number',
-    when: { source: { itemType: 'statute' }, target: { type: 'legislation' } }
+    when: {
+      source: { itemType: 'statute' },
+      target: { type: 'legislation' }
+    }
   },
   {
     source: 'episodeNumber',
@@ -1526,7 +1400,10 @@ const MAPPING = [
   {
     source: 'label',
     target: 'publisher',
-    when: { source: { itemType: 'audioRecording' }, target: { type: 'song' } }
+    when: {
+      source: { itemType: 'audioRecording' },
+      target: { type: 'song' }
+    }
   },
   {
     source: 'studio',
@@ -1552,10 +1429,7 @@ const MAPPING = [
   {
     source: 'recipient',
     target: 'recipient',
-    when: {
-      source: { itemType: ['letter', 'email', 'instantMessage'] },
-      target: { type: 'personal_communication' }
-    },
+    when: { target: { type: 'personal_communication' } },
     convert: CONVERTERS.CREATORS
   },
   {
@@ -1575,14 +1449,6 @@ const MAPPING = [
     source: 'reviewedAuthor',
     target: 'reviewed-author',
     when: {
-      source: {
-        itemType: [
-          'journalArticle',
-          'magazineArticle',
-          'newspaperArticle',
-          'document'
-        ]
-      },
       target: {
         type: ['article-journal', 'article-magazine', 'article-newspaper']
       }
@@ -1592,7 +1458,7 @@ const MAPPING = [
   {
     source: 'scale',
     target: 'scale',
-    when: { source: { itemType: 'map' }, target: { type: 'map' } }
+    when: { target: { type: 'map' } }
   },
   {
     source: 'section',
@@ -1611,27 +1477,6 @@ const MAPPING = [
     source: 'shortTitle',
     target: 'shortTitle',
     when: {
-      source: {
-        itemType: [
-          'book', 'bookSection',
-          'journalArticle', 'magazineArticle',
-          'newspaperArticle', 'thesis',
-          'letter', 'manuscript',
-          'interview', 'film',
-          'artwork', 'webpage',
-          'report', 'bill',
-          'case', 'hearing',
-          'patent', 'statute',
-          'email', 'map',
-          'blogPost', 'instantMessage',
-          'forumPost', 'audioRecording',
-          'presentation', 'videoRecording',
-          'tvBroadcast', 'radioBroadcast',
-          'podcast', 'computerProgram',
-          'conferencePaper', 'document',
-          'encyclopediaArticle', 'dictionaryEntry'
-        ]
-      },
       target: {
         type: [
           'book',
@@ -1667,21 +1512,6 @@ const MAPPING = [
     source: 'libraryCatalog',
     target: 'source',
     when: {
-      source: {
-        itemType: [
-          'book', 'bookSection',
-          'journalArticle', 'magazineArticle',
-          'newspaperArticle', 'thesis',
-          'letter', 'manuscript',
-          'interview', 'film',
-          'artwork', 'report',
-          'map', 'audioRecording',
-          'videoRecording', 'tvBroadcast',
-          'radioBroadcast', 'computerProgram',
-          'conferencePaper', 'document',
-          'encyclopediaArticle', 'dictionaryEntry'
-        ]
-      },
       target: {
         type: [
           'book',
@@ -1708,12 +1538,12 @@ const MAPPING = [
   {
     source: 'legalStatus',
     target: 'status',
-    when: { source: { itemType: 'patent' }, target: { type: 'patent' } }
+    when: { target: { type: 'patent' } }
   },
   {
     source: 'filingDate',
     target: 'submitted',
-    when: { source: { itemType: 'patent' }, target: { type: 'patent' } },
+    when: { target: { type: 'patent' } },
     convert: CONVERTERS.DATE
   },
   {
@@ -1777,7 +1607,10 @@ const MAPPING = [
   {
     source: 'nameOfAct',
     target: 'title',
-    when: { source: { itemType: 'statute' }, target: { type: 'legislation' } }
+    when: {
+      source: { itemType: 'statute' },
+      target: { type: 'legislation' }
+    }
   },
   {
     source: 'subject',
@@ -1834,10 +1667,7 @@ const MAPPING = [
   {
     source: 'version',
     target: 'version',
-    when: {
-      source: { itemType: 'computerProgram' },
-      target: { type: 'book', version: true }
-    }
+    when: { source: { itemType: 'computerProgram' }, target: { type: 'book', version: true } }
   },
   {
     source: 'volume',
@@ -1889,7 +1719,10 @@ const MAPPING = [
   {
     source: 'codeNumber',
     target: 'volume',
-    when: { source: { itemType: 'statute' }, target: { type: 'legislation' } }
+    when: {
+      source: { itemType: 'statute' },
+      target: { type: 'legislation' }
+    }
   }
 ]
 
