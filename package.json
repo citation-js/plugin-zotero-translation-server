@@ -1,6 +1,6 @@
 {
   "name": "@citation-js/plugin-zotero-translation-server",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0",
   "description": "Citation.js Plugin for Zotero Translation Server instances",
   "main": "lib/index.js",
   "scripts": {
