@@ -1,4 +1,4 @@
-This is a Citation.js plugin for [Zotero Translation Server](https://github.com/zotero/translation-server) instances. The default instance if `http://localhost:1969` but that can be configured like this:
+This is a Citation.js plugin for [Zotero Translation Server](https://github.com/zotero/translation-server) instances. The default instance is `http://localhost:1969` but that can be configured like this:
 
 ```js
 const { plugins } = require('@citation-js/core')
@@ -7,6 +7,10 @@ plugins.config.get('@zotero').host = 'https://translate.example.org'
 ```
 
 A known host is `https://translate.manubot.org`, but it is specifically ["a public instance for Manubot users"](https://github.com/manubot/manubot/issues/82#issue-387529150).
+
+To set up your own host, you can [use the Docker image](https://hub.docker.com/r/zotero/translation-server)
+([short guide](https://github.com/zotero/translation-server#running-via-docker))
+or run it from the source ([longer guide](https://github.com/manubot/manubot/issues/82#issuecomment-444579414)).
 
 ## Install
 
