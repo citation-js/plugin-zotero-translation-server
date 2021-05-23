@@ -1,5 +1,6 @@
 import { util } from '@citation-js/core'
 import makeRequest from './translationServer'
+import { parse as parseRecord } from './zotero'
 
 function makeParsers (type, format) {
   return {
@@ -16,7 +17,7 @@ export const ref = '@zotero'
 export const formats = {
   // translate to CSL-JSON
   '@zotero/record': {
-    ...makeParsers('export', 'csljson'),
+    parse: parseRecord,
     parseType: {
       dataType: 'SimpleObject',
       propertyConstraint: {
@@ -25,7 +26,7 @@ export const formats = {
     }
   },
   '@zotero/records': {
-    ...makeParsers('export', 'csljson'),
+    parse (records) { return records.map(parseRecord) },
     parseType: {
       dataType: 'Array',
       elementConstraint: '@zotero/record'

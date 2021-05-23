@@ -4,6 +4,13 @@
 
 import { plugins } from '@citation-js/core'
 import { ref, formats as input } from './input'
+import { format as formatRecord } from './zotero'
 import config from './config'
 
-plugins.add(ref, { input, config })
+const output = {
+  'zotero-json' (records) {
+    return records.map(formatRecord)
+  }
+}
+
+plugins.add(ref, { input, config, output })
