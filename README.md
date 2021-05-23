@@ -36,4 +36,4 @@ This plugins hijacks (or "procedurally enhances") the `@else/url` type, scraping
 
 #### Zotero API JSON
 
-This plugin adds support for Zotero API JSON. Currently, this is also done with the Translation Server.
+This plugin adds support for Zotero API JSON.
