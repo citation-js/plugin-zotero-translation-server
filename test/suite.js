@@ -27,7 +27,7 @@ const apiTests = [
   },
   {
     name: 'multiple results',
-    input: 'https://www.ncbi.nlm.nih.gov/pubmed?term=%221878%2F01%2F05%22%5BDate%20-%20Publication%5D',
+    input: 'https://pubmed.ncbi.nlm.nih.gov/?term=%221878%2F01%2F05%22%5BDate+-+Publication%5D&sort=pubdate',
     output: [
       {
         type: 'article-journal',
