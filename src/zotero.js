@@ -98,7 +98,7 @@ const CONVERTERS = {
   },
   TAGS: {
     toTarget (tags) {
-      return tags.map(tag => tag.tag).join(',')
+      return tags.length ? tags.map(tag => tag.tag).join(',') : undefined
     },
     toSource (tags) {
       return tags.split(',').map(tag => ({ tag, type: 1 }))
