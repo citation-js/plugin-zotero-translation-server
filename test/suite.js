@@ -17,7 +17,8 @@ const apiTests = [
         { family: 'Collins', given: 'Keith' }
       ],
       'container-title': 'The New York Times',
-      issued: { 'date-parts': [['2018', 6, 11]] },
+      issued: { 'date-parts': [[2018, 6, 11]] },
+      keyword: 'Net Neutrality,Pai, Ajit,Federal Communications Commission,Regulation and Deregulation of Industry,Computers and the Internet',
       language: 'en-US',
       section: 'Technology',
       source: 'NYTimes.com',
@@ -39,13 +40,15 @@ const apiTests = [
         source: 'PubMed',
         DOI: '10.1136/bmj.1.888.9',
         ISSN: '0007-1447',
+        PMID: '20748736',
+        PMCID: 'PMC2221215',
         note: 'PMID: 20748736\nPMCID: PMC2221215',
         journalAbbreviation: 'Br Med J',
         language: 'eng',
         author: [
           { family: 'Coghill', given: 'J. G.' }
         ],
-        issued: { 'date-parts': [['1878', 1, 5]] }
+        issued: { 'date-parts': [[1878, 1, 5]] }
       },
       {
         type: 'article-journal',
@@ -57,13 +60,15 @@ const apiTests = [
         source: 'PubMed',
         DOI: '10.1136/bmj.1.888.8',
         ISSN: '0007-1447',
+        PMID: '20748735',
+        PMCID: 'PMC2221208',
         note: 'PMID: 20748735\nPMCID: PMC2221208',
         journalAbbreviation: 'Br Med J',
         language: 'eng',
         author: [
           { family: 'Keith', given: 'T.' }
         ],
-        issued: { 'date-parts': [['1878', 1, 5]] }
+        issued: { 'date-parts': [[1878, 1, 5]] }
       },
       {
         type: 'article-journal',
@@ -75,13 +80,15 @@ const apiTests = [
         source: 'PubMed',
         DOI: '10.1136/bmj.1.888.7',
         ISSN: '0007-1447',
+        PMID: '20748734',
+        PMCID: 'PMC2221211',
         note: 'PMID: 20748734\nPMCID: PMC2221211',
         journalAbbreviation: 'Br Med J',
         language: 'eng',
         author: [
           { family: 'Tay', given: 'W.' }
         ],
-        issued: { 'date-parts': [['1878', 1, 5]] }
+        issued: { 'date-parts': [[1878, 1, 5]] }
       },
       {
         type: 'article-journal',
@@ -93,13 +100,15 @@ const apiTests = [
         source: 'PubMed',
         DOI: '10.1136/bmj.1.888.5',
         ISSN: '0007-1447',
+        PMID: '20748733',
+        PMCID: 'PMC2221222',
         note: 'PMID: 20748733\nPMCID: PMC2221222',
         journalAbbreviation: 'Br Med J',
         language: 'eng',
         author: [
           { family: 'Thorburn', given: 'J.' }
         ],
-        issued: { 'date-parts': [['1878', 1, 5]] }
+        issued: { 'date-parts': [[1878, 1, 5]] }
       },
       {
         type: 'article-journal',
@@ -110,10 +119,12 @@ const apiTests = [
         issue: '888',
         source: 'PubMed',
         ISSN: '0007-1447',
+        PMID: '20748732',
+        PMCID: 'PMC2221224',
         note: 'PMID: 20748732\nPMCID: PMC2221224',
         journalAbbreviation: 'Br Med J',
         language: 'eng',
-        issued: { 'date-parts': [['1878', 1, 5]] }
+        issued: { 'date-parts': [[1878, 1, 5]] }
       },
       {
         type: 'article-journal',
@@ -125,6 +136,8 @@ const apiTests = [
         source: 'PubMed',
         DOI: '10.1136/bmj.1.888.10',
         ISSN: '0007-1447',
+        PMID: '20748731',
+        PMCID: 'PMC2221206',
         note: 'PMID: 20748731\nPMCID: PMC2221206',
         shortTitle: 'The Treatment of Hip-Joint Disease by Extension with Motion',
         journalAbbreviation: 'Br Med J',
@@ -132,7 +145,7 @@ const apiTests = [
         author: [
           { family: 'Adams', given: 'W.' }
         ],
-        issued: { 'date-parts': [['1878', 1, 5]] }
+        issued: { 'date-parts': [[1878, 1, 5]] }
       },
       {
         type: 'article-journal',
@@ -144,13 +157,15 @@ const apiTests = [
         source: 'PubMed',
         DOI: '10.1136/bmj.1.888.1',
         ISSN: '0007-1447',
+        PMID: '20748730',
+        PMCID: 'PMC2221223',
         note: 'PMID: 20748730\nPMCID: PMC2221223',
         journalAbbreviation: 'Br Med J',
         language: 'eng',
         author: [
           { family: 'Sanderson', given: 'J. B.' }
         ],
-        issued: { 'date-parts': [['1878', 1, 5]] }
+        issued: { 'date-parts': [[1878, 1, 5]] }
       }
     ]
   }
