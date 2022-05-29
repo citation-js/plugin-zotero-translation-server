@@ -1,3 +1,12 @@
+## [0.1.1](https://github.com/citation-js/plugin-zotero-translation-server/compare/v0.1.0...v0.1.1) (2022-05-29)
+
+
+### Features
+
+* **zotero:** update mapping to CSL 1.0.2 ([fb50722](https://github.com/citation-js/plugin-zotero-translation-server/commit/fb50722f555aaaaeaa2b37cfe796d2ce34f5142b))
+
+
+
 # [0.1.0](https://github.com/citation-js/plugin-zotero-translation-server/compare/v0.1.0-alpha.0...v0.1.0) (2021-05-23)
 
 
@@ -7,12 +16,12 @@
 * **zotero:** simplify parser mappings ([e4d45da](https://github.com/citation-js/plugin-zotero-translation-server/commit/e4d45daa784c2b3161028dce3dca7277de239463))
 
 
+* chore(deps)!: @citation-js/core@0.5.1 ([356d221](https://github.com/citation-js/plugin-zotero-translation-server/commit/356d221715248b26c08030fdeddd464b0dcd9bd0))
+
+
 ### Features
 
 * **zotero:** convert ZoteroJSON to CSL-JSON locally ([1c0e5c3](https://github.com/citation-js/plugin-zotero-translation-server/commit/1c0e5c3cc1aa63e7720af129ce42a49aa1c6b86e))
-
-
-* chore(deps)!: @citation-js/core@0.5.1 ([356d221](https://github.com/citation-js/plugin-zotero-translation-server/commit/356d221715248b26c08030fdeddd464b0dcd9bd0))
 
 
 ### BREAKING CHANGES
