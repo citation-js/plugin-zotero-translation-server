@@ -43,7 +43,7 @@ const apiTests = [
         PMID: '20748736',
         PMCID: 'PMC2221215',
         note: 'PMID: 20748736\nPMCID: PMC2221215',
-        journalAbbreviation: 'Br Med J',
+        'container-title-short': 'Br Med J',
         language: 'eng',
         author: [
           { family: 'Coghill', given: 'J. G.' }
@@ -63,7 +63,7 @@ const apiTests = [
         PMID: '20748735',
         PMCID: 'PMC2221208',
         note: 'PMID: 20748735\nPMCID: PMC2221208',
-        journalAbbreviation: 'Br Med J',
+        'container-title-short': 'Br Med J',
         language: 'eng',
         author: [
           { family: 'Keith', given: 'T.' }
@@ -83,7 +83,7 @@ const apiTests = [
         PMID: '20748734',
         PMCID: 'PMC2221211',
         note: 'PMID: 20748734\nPMCID: PMC2221211',
-        journalAbbreviation: 'Br Med J',
+        'container-title-short': 'Br Med J',
         language: 'eng',
         author: [
           { family: 'Tay', given: 'W.' }
@@ -103,7 +103,7 @@ const apiTests = [
         PMID: '20748733',
         PMCID: 'PMC2221222',
         note: 'PMID: 20748733\nPMCID: PMC2221222',
-        journalAbbreviation: 'Br Med J',
+        'container-title-short': 'Br Med J',
         language: 'eng',
         author: [
           { family: 'Thorburn', given: 'J.' }
@@ -122,7 +122,7 @@ const apiTests = [
         PMID: '20748732',
         PMCID: 'PMC2221224',
         note: 'PMID: 20748732\nPMCID: PMC2221224',
-        journalAbbreviation: 'Br Med J',
+        'container-title-short': 'Br Med J',
         language: 'eng',
         issued: { 'date-parts': [[1878, 1, 5]] }
       },
@@ -139,8 +139,8 @@ const apiTests = [
         PMID: '20748731',
         PMCID: 'PMC2221206',
         note: 'PMID: 20748731\nPMCID: PMC2221206',
-        shortTitle: 'The Treatment of Hip-Joint Disease by Extension with Motion',
-        journalAbbreviation: 'Br Med J',
+        'title-short': 'The Treatment of Hip-Joint Disease by Extension with Motion',
+        'container-title-short': 'Br Med J',
         language: 'eng',
         author: [
           { family: 'Adams', given: 'W.' }
@@ -160,7 +160,7 @@ const apiTests = [
         PMID: '20748730',
         PMCID: 'PMC2221223',
         note: 'PMID: 20748730\nPMCID: PMC2221223',
-        journalAbbreviation: 'Br Med J',
+        'container-title-short': 'Br Med J',
         language: 'eng',
         author: [
           { family: 'Sanderson', given: 'J. B.' }

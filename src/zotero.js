@@ -11,15 +11,15 @@ const TYPES = {
     book: 'book',
     bookSection: 'chapter',
     case: 'legal_case',
-    computerProgram: 'book',
+    computerProgram: 'software',
     conferencePaper: 'paper-conference',
     dictionaryEntry: 'entry-dictionary',
-    document: 'article',
+    document: 'document',
     email: 'personal_communication',
     encyclopediaArticle: 'entry-encyclopedia',
     film: 'motion_picture',
     forumPost: 'post',
-    hearing: 'bill',
+    hearing: 'hearing',
     instantMessage: 'personal_communication',
     interview: 'interview',
     journalArticle: 'article-journal',
@@ -28,7 +28,7 @@ const TYPES = {
     manuscript: 'manuscript',
     map: 'map',
     newspaperArticle: 'article-newspaper',
-    note: 'article',
+    note: 'document',
     patent: 'patent',
     podcast: 'song',
     presentation: 'speech',
@@ -47,14 +47,19 @@ const TYPES = {
     'article-journal': 'journalArticle',
     bill: 'bill',
     book: 'book',
-    // broadcast: '', tv or radio?
+    // broadcast: '', // tv or radio?
     chapter: 'bookSection',
+    // classic: '',
+    // collection: '',
     // dataset: '',
+    document: 'document',
     // entry: '',
     'entry-dictionary': 'dictionaryEntry',
     'entry-encyclopedia': 'encyclopediaArticle',
+    // event: '',
     figure: 'artwork',
     graphic: 'artwork',
+    hearing: 'hearing',
     interview: 'interview',
     legislation: 'statute',
     legal_case: 'case',
@@ -65,13 +70,18 @@ const TYPES = {
     // pamphlet: '',
     'paper-conference': 'conferencePaper',
     patent: 'patent',
+    // performance: '',
+    // periodical: '',
+    personal_communication: 'letter', // or instantMessage, email
     post: 'forumPost',
     'post-weblog': 'blogPost',
-    personal_communication: 'letter', // or instantMessage, email
+    // regulation: '',
     report: 'report',
     // review: '',
     // 'review-book': '',
+    software: 'computerProgram',
     song: 'audioRecording',
+    // standard: '',
     speech: 'presentation',
     thesis: 'thesis',
     // treaty: '',
@@ -878,7 +888,7 @@ const MAPPING = [
   },
   {
     source: 'meetingName',
-    target: 'event',
+    target: 'event-title',
     when: {
       source: { itemType: 'presentation' },
       target: { type: 'speech' }
@@ -886,7 +896,7 @@ const MAPPING = [
   },
   {
     source: 'conferenceName',
-    target: 'event',
+    target: 'event-title',
     when: {
       source: { itemType: 'conferencePaper' },
       target: { type: 'paper-conference' }
@@ -978,6 +988,17 @@ const MAPPING = [
     when: {
       source: { itemType: 'computerProgram' },
       target: { type: 'book', version: true }
+    }
+  },
+  {
+    source: 'guest',
+    target: 'guest',
+    convert: CONVERTERS.CREATORS,
+    when: {
+      source: {
+        itemType: ['podcast', 'radioBroadcast', 'tvBroadcast']
+      },
+      target: { type: 'broadcast' }
     }
   },
   {
@@ -1074,8 +1095,13 @@ const MAPPING = [
   },
   {
     source: 'journalAbbreviation',
-    target: 'journalAbbreviation',
+    target: 'container-title-short',
     when: { target: { type: 'article-journal' } }
+  },
+  {
+    source: 'journalAbbreviation',
+    target: 'journalAbbreviation',
+    when: { source: false, target: { 'container-title-short': false } }
   },
   {
     source: 'language',
@@ -1349,6 +1375,19 @@ const MAPPING = [
     when: { source: { itemType: 'case' }, target: { type: 'legal_case' } }
   },
   {
+    source: 'producer',
+    target: 'producer',
+    convert: CONVERTERS.CREATORS,
+    when: {
+      source: {
+        itemType: ['film', 'radioBroadcast', 'tvBroadcast', 'motion_picture']
+      },
+      target: {
+        type: ['broadcast', 'motion_picture']
+      }
+    }
+  },
+  {
     source: 'publisher',
     target: 'publisher',
     when: {
@@ -1461,6 +1500,19 @@ const MAPPING = [
     when: { target: { type: 'map' } }
   },
   {
+    source: 'scriptwriter',
+    target: 'script-writer',
+    convert: CONVERTERS.CREATORS,
+    when: {
+      source: {
+        itemType: ['film', 'radioBroadcast', 'tvBroadcast', 'motion_picture']
+      },
+      target: {
+        type: ['broadcast', 'motion_picture']
+      }
+    }
+  },
+  {
     source: 'section',
     target: 'section',
     when: {
@@ -1475,7 +1527,7 @@ const MAPPING = [
   },
   {
     source: 'shortTitle',
-    target: 'shortTitle',
+    target: 'title-short',
     when: {
       target: {
         type: [
@@ -1506,6 +1558,43 @@ const MAPPING = [
           'entry-dictionary'
         ]
       }
+    }
+  },
+  {
+    source: 'shortTitle',
+    target: 'shortTitle',
+    when: {
+      source: false,
+      target: {
+        type: [
+          'book',
+          'chapter',
+          'article-journal',
+          'article-magazine',
+          'article-newspaper',
+          'thesis',
+          'personal_communication',
+          'manuscript',
+          'interview',
+          'figure',
+          'graphic',
+          'webpage',
+          'report',
+          'bill',
+          'legal_case',
+          'patent',
+          'legislation',
+          'map',
+          'post-weblog',
+          'post',
+          'song',
+          'speech',
+          'paper-conference',
+          'entry-encyclopedia',
+          'entry-dictionary'
+        ]
+      },
+      'title-short': false
     }
   },
   {
