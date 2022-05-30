@@ -20,6 +20,7 @@ jobs:
 
     - name: Setup
       run: |
+        npm install --global npm
         npm install
         git config --global url."https://github.com/".insteadOf git://github.com/
         git clone https://github.com/zotero/translation-server
