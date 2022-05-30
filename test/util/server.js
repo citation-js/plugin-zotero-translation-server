@@ -2,7 +2,7 @@ const spawn = require('child_process').spawn
 
 switch (process.argv[2]) {
   case 'start': {
-    const server = spawn('npm', ['start'], {
+    spawn('npm', ['start'], {
       detached: true,
       stdio: 'ignore',
       windowsHide: true
