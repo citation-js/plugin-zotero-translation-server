@@ -24,7 +24,7 @@ jobs:
         git clone --recursive https://github.com/zotero/translation-server
         cd translation-server
         git checkout 2.0.3
-        git submodule update --init --recursive
+        git submodule update --recursive
         npm install
         node ../test/util/server.js start
         cd ..
