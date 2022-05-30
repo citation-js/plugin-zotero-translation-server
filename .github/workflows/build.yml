@@ -17,17 +17,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-
-    - name: Setup
-      run: |
-        npm install
-        git clone --recursive https://github.com/zotero/translation-server
-        cd translation-server
-        git checkout 2.0.3
-        git submodule update --recursive
-        npm install
-        node ../test/util/server.js start
-        cd ..
+    - uses: docker://zotero/translation-server:2.0.4
 
     - name: Tests
       run: npm run coverage
