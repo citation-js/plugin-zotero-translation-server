@@ -1,3 +1,15 @@
+# [0.2.0](https://github.com/citation-js/plugin-zotero-translation-server/compare/v0.1.1...v0.2.0) (2022-05-30)
+
+
+* chore(deps)!: raise minimal Node.js version to 14 ([a93849e](https://github.com/citation-js/plugin-zotero-translation-server/commit/a93849ee76f1a7bc04d84fd783a0535e64e161a2))
+
+
+### BREAKING CHANGES
+
+* Use Node.js 14 or higher
+
+
+
 ## [0.1.1](https://github.com/citation-js/plugin-zotero-translation-server/compare/v0.1.0...v0.1.1) (2022-05-29)
 
 
