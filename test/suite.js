@@ -5,6 +5,8 @@ import '../src/'
 import assert from 'assert'
 import { plugins } from '@citation-js/core'
 
+plugins.config.get('@zotero').host = 'http://0.0.0.0:1969'
+
 const apiTests = [
   {
     name: 'single result',

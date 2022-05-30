@@ -20,10 +20,12 @@ jobs:
 
     - name: Setup
       run: |
+        npm install --global npm
         npm install
-        git clone --recursive https://github.com/zotero/translation-server
+        git config --global url."https://github.com/".insteadOf git://github.com/
+        git clone https://github.com/zotero/translation-server
         cd translation-server
-        git checkout 2.0.3
+        git submodule update --init --recursive
         npm install
         node ../test/util/server.js start
         cd ..

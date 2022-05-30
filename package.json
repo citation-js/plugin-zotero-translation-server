@@ -7,7 +7,7 @@
     "test": "mocha -r @babel/register -R spec test/suite.js",
     "babel": "babel src -d lib --copy-files",
     "lint": "standard \"src/**/*.js\" \"test/**/*.js\"",
-    "coverage": "nyc npm test",
+    "coverage": "NODE_ENV=coverage nyc mocha -R spec test/suite.js",
     "report": "nyc report --reporter=lcov > coverage.lcov",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "prepublishOnly": "npm run babel",
@@ -35,13 +35,6 @@
   "files": [
     "/lib"
   ],
-  "nyc": {
-    "include": [
-      "src/**/*.js"
-    ],
-    "sourceMap": false,
-    "instrument": false
-  },
   "standard": {
     "parser": "@babel/eslint-parser"
   },
